@@ -1,0 +1,24 @@
+targets:
+  #uaa: ${vcap.services.Architect-Engineering-sso.credentials.auth_domain}
+  uaa: https://Architect-Engineering-sso.uaa.sys.lab01.pcf.pw
+uaa:
+  identity-zone-id: Architect-Engineering-sso
+
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          pivotalbank:
+            clientId: ${vcap.services.Architect-Engineering-sso.credentials.client_id}
+            clientSecret: ${vcap.services.Architect-Engineering-sso.credentials.client_secret}
+  redis:
+    host: ${vcap.services.redis.credentials.host}
+    password: ${vcap.services.redis.credentials.password}
+    port: ${vcap.services.redis.credentials.port}
+
+management:
+  endpoints:
+    web:
+      exposure:
+         include: '*'

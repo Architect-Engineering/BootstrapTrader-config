@@ -1,0 +1,49 @@
+ribbon:
+  IsSecure: false
+pivotal:
+  quotesService:
+    name: quotes-service
+  userService:
+    name: user-service  
+  accountsService:
+    name: accounts-service
+  portfolioService:
+    name: portfolio-service
+logging:
+  level:
+     io:
+        pivotal: DEBUG
+     com:
+        netflix: FATAL
+     org:
+        springframework:
+           web: WARN
+           cloud: WARN
+spring:
+  sleuth:
+    sampler:
+      probability: 1.0
+  jpa:
+     hibernate:
+        ddl-auto: update
+  main:
+     allow-bean-definition-overriding: true
+
+  session:
+    store-type: redis
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+
+scopes:
+  trade: trade
+  account: account
+  portfolio: portfolio
+  bank: pivotal.bank
+
+
+
+

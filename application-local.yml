@@ -1,0 +1,28 @@
+management:
+  health:
+    rabbit:
+      enabled: false
+logging:
+  level:
+    io:
+      pivotal: DEBUG
+    com:
+      netflix: INFO
+    org:
+      springframework:
+        web: INFO
+        cloud: WARN
+
+# disable the hystrix streaming on rabbit locally
+hystrix:
+  stream:
+    queue:
+      enabled: false
+
+
+  #datasource:
+  #  url: jdbc:mysql://localhost:3306/traderdb
+  #  username: traderdb
+  #  password: traderdb
+  #  driver-class-name: "com.mysql.jdbc.Driver"
+
